@@ -1,0 +1,4 @@
+python-telegram-bot
+chromadb 
+ollama 
+python-dostenv
