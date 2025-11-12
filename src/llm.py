@@ -6,7 +6,6 @@ import asyncio
 logger = logging.getLogger(__name__)
 
 async def llm_start():
-
     prompt = f"""     """
 
     start = time.time()
