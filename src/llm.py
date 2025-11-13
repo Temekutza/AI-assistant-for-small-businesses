@@ -1,21 +1,26 @@
-import logging
 import time
 from ollama import AsyncClient
-import asyncio
 
-logger = logging.getLogger(__name__)
-
-async def llm_start():
-    prompt = f"""     """
-
-    start = time.time()
-    try:
-        client = AsyncClient()
-        response = await client.chat(
-            model='mistral',
-            messages=[{'role': 'user', 'content': prompt}],
-            options={'temperature': 0.7}
-        )
-    except Exception as e:
-        logger.exception("Ошибка LLM")
-        return "Не удалось сработать. Попробуйте позже."
+class LLMService:
+    def __init__(self, model="mistral"):
+        self.model = model
+    
+    async def generate(self, prompt):
+        """Генерация ответа с использованием Mistral-7B"""
+        start = time.time()
+        try:
+            client = AsyncClient()
+            response = await client.generate(
+                model=self.model,
+                prompt=prompt,
+                options={
+                    'temperature': 0.3,  
+                    'num_ctx': 4096
+                }
+            )
+            elapsed = time.time() - start
+            print(f"LLM response generated in {elapsed:.2f} seconds")
+            return response['response']
+        except Exception as e:
+            print(f"LLM error: {e}")
+            return "Извините, произошла ошибка при обработке запроса."
