@@ -22,10 +22,7 @@ class RAGSystem:
         search_time = time.time() - start_time
         
         # 2. Фильтрация документов по релевантности (только положительная релевантность)
-        relevant_docs = [
-            doc for doc in raw_relevant_docs
-            if doc.get('distance', 0) is not None and doc['distance'] < 1.0
-        ]
+        relevant_docs = sorted(raw_relevant_docs, key=lambda x: x['distance'])
         
         logger.info(f"[RAG] Поиск завершен за {search_time:.2f} секунд")
         logger.info(f"[RAG] Найдено документов до фильтрации: {len(raw_relevant_docs)}")
