@@ -14,7 +14,8 @@ class LLMService:
                 model=self.model,
                 prompt=prompt,
                 options={
-                    'temperature': 0.3,  
+                    'temperature': 0.3, 
+                    'top_p': 0.9,
                     'num_ctx': 4096
                 }
             )
