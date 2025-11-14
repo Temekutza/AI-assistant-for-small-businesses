@@ -1,0 +1,156 @@
+2025-11-14 13:53:13,598 | root | INFO | Логирование инициализировано
+2025-11-14 13:53:13,745 | root | INFO | Логирование инициализировано
+2025-11-14 13:53:13,746 | root | INFO | Логирование инициализировано
+2025-11-14 13:53:14,321 | src.rag | INFO | Загружена существующая БД
+2025-11-14 13:53:14,322 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 13:53:14,322 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 13:53:14,323 | root | INFO | Логирование инициализировано
+2025-11-14 13:53:14,324 | __main__ | INFO | Бот запущен...
+2025-11-14 13:57:15,439 | root | INFO | Логирование инициализировано
+2025-11-14 13:57:15,585 | root | INFO | Логирование инициализировано
+2025-11-14 13:57:15,586 | root | INFO | Логирование инициализировано
+2025-11-14 13:57:16,200 | src.rag | INFO | Создана новая БД
+2025-11-14 13:57:16,200 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 13:57:16,200 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 13:57:16,202 | root | INFO | Логирование инициализировано
+2025-11-14 13:57:16,203 | __main__ | INFO | Бот запущен...
+2025-11-14 14:00:02,998 | root | INFO | Логирование инициализировано
+2025-11-14 14:00:03,145 | root | INFO | Логирование инициализировано
+2025-11-14 14:00:03,146 | root | INFO | Логирование инициализировано
+2025-11-14 14:00:03,723 | src.rag | INFO | Загружена существующая БД
+2025-11-14 14:00:03,723 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 14:00:03,723 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 14:00:03,724 | src.bot | INFO | Найдено 3 CSV-файлов в data/. Загружаю в RAG...
+2025-11-14 14:00:03,819 | src.bot | ERROR | Ошибка при загрузке /home/medj/projects/hackatons/alpha_hackaton/src/../data/sample_submission.csv: Error raised by inference API HTTP code: 404, {"error":"model \"nomic-embed-text\" not found, try pulling it first"}
+2025-11-14 14:00:03,985 | src.bot | ERROR | Ошибка при загрузке /home/medj/projects/hackatons/alpha_hackaton/src/../data/questions_clean.csv: Error raised by inference API HTTP code: 404, {"error":"model \"nomic-embed-text\" not found, try pulling it first"}
+2025-11-14 14:00:04,121 | src.bot | ERROR | Ошибка при загрузке /home/medj/projects/hackatons/alpha_hackaton/src/../data/websites.csv: Error loading /home/medj/projects/hackatons/alpha_hackaton/src/../data/websites.csv
+2025-11-14 14:00:04,122 | root | INFO | Логирование инициализировано
+2025-11-14 14:00:04,123 | __main__ | INFO | Бот запущен...
+2025-11-14 14:03:17,418 | root | INFO | Логирование инициализировано
+2025-11-14 14:03:17,562 | root | INFO | Логирование инициализировано
+2025-11-14 14:03:17,563 | root | INFO | Логирование инициализировано
+2025-11-14 14:03:18,182 | src.rag | INFO | Создана новая БД
+2025-11-14 14:03:18,183 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 14:03:18,183 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 14:03:18,183 | src.bot | INFO | Найдено 3 CSV-файлов в data/. Загружаю в RAG...
+2025-11-14 14:07:15,804 | src.bot | ERROR | Ошибка при загрузке /home/medj/projects/hackatons/alpha_hackaton/src/../data/sample_submission.csv: ValueError: Batch size of 6977 is greater than max batch size of 5461
+2025-11-14 14:08:53,097 | root | INFO | Логирование инициализировано
+2025-11-14 14:08:53,241 | root | INFO | Логирование инициализировано
+2025-11-14 14:08:53,242 | root | INFO | Логирование инициализировано
+2025-11-14 14:08:53,861 | src.rag | INFO | Создана новая БД
+2025-11-14 14:08:53,861 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 14:08:53,861 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 14:08:53,862 | src.bot | INFO | Найдено 3 CSV-файлов в data/. Загружаю в RAG...
+2025-11-14 14:08:53,938 | src.rag | INFO | Загружаю 6977 документов из /home/medj/projects/hackatons/alpha_hackaton/src/../data/sample_submission.csv батчами по 5000
+2025-11-14 14:12:52,219 | src.rag | INFO | Успешно загружено 6977 документов из /home/medj/projects/hackatons/alpha_hackaton/src/../data/sample_submission.csv
+2025-11-14 14:12:52,222 | src.bot | INFO | Успешно загружен: sample_submission.csv
+2025-11-14 14:12:52,375 | src.rag | INFO | Загружаю 6977 документов из /home/medj/projects/hackatons/alpha_hackaton/src/../data/questions_clean.csv батчами по 5000
+2025-11-14 14:18:04,367 | src.rag | INFO | Успешно загружено 6977 документов из /home/medj/projects/hackatons/alpha_hackaton/src/../data/questions_clean.csv
+2025-11-14 14:18:04,372 | src.bot | INFO | Успешно загружен: questions_clean.csv
+2025-11-14 14:18:04,534 | src.bot | ERROR | Ошибка при загрузке /home/medj/projects/hackatons/alpha_hackaton/src/../data/websites.csv: Error loading /home/medj/projects/hackatons/alpha_hackaton/src/../data/websites.csv
+2025-11-14 14:18:04,536 | root | INFO | Логирование инициализировано
+2025-11-14 14:18:04,536 | __main__ | INFO | Бот запущен...
+2025-11-14 14:28:15,038 | src.bot | INFO | Пользователь 849721202 запустил /start
+2025-11-14 14:29:40,038 | root | INFO | Логирование инициализировано
+2025-11-14 14:29:40,179 | root | INFO | Логирование инициализировано
+2025-11-14 14:29:40,180 | root | INFO | Логирование инициализировано
+2025-11-14 14:29:40,751 | src.rag | INFO | Загружена существующая БД
+2025-11-14 14:29:40,751 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 14:29:40,751 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 14:29:40,752 | src.bot | INFO | Найдено 3 CSV-файлов в data/. Загружаю в RAG...
+2025-11-14 14:29:40,802 | src.rag | INFO | Загружаю 6977 документов из /home/medj/projects/hackatons/alpha_hackaton/src/../data/sample_submission.csv батчами по 5000
+2025-11-14 14:33:43,591 | root | INFO | Логирование инициализировано
+2025-11-14 14:37:01,816 | root | INFO | Логирование инициализировано
+2025-11-14 14:37:01,962 | root | INFO | Логирование инициализировано
+2025-11-14 14:37:01,963 | root | INFO | Логирование инициализировано
+2025-11-14 14:37:02,560 | src.rag | INFO | Загружена существующая БД
+2025-11-14 14:37:02,560 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 14:37:02,560 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 14:37:02,561 | src.bot | INFO | Найдено 3 CSV-файлов в data/. Загружаю в RAG...
+2025-11-14 14:37:02,612 | src.rag | INFO | Загружаю 6977 документов из /home/medj/projects/hackatons/alpha_hackaton/src/../data/sample_submission.csv батчами по 5000
+2025-11-14 14:39:26,125 | root | INFO | Логирование инициализировано
+2025-11-14 14:39:26,266 | root | INFO | Логирование инициализировано
+2025-11-14 14:39:26,267 | root | INFO | Логирование инициализировано
+2025-11-14 14:39:26,852 | src.rag | INFO | Загружена существующая БД
+2025-11-14 14:39:26,852 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 14:39:26,853 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 14:39:26,962 | src.bot | INFO | RAG уже содержит 13954 документов. Пропускаем загрузку.
+2025-11-14 14:39:26,964 | root | INFO | Логирование инициализировано
+2025-11-14 14:40:28,617 | root | INFO | Логирование инициализировано
+2025-11-14 14:40:28,759 | root | INFO | Логирование инициализировано
+2025-11-14 14:40:28,760 | root | INFO | Логирование инициализировано
+2025-11-14 14:40:29,349 | src.rag | INFO | Загружена существующая БД
+2025-11-14 14:40:29,349 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 14:40:29,350 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 14:40:29,455 | src.bot | INFO | RAG уже содержит 13954 документов. Пропускаем загрузку.
+2025-11-14 14:40:29,458 | root | INFO | Логирование инициализировано
+2025-11-14 14:40:29,467 | __main__ | INFO | ChromaDB загружена: 13954 документов
+2025-11-14 14:40:29,468 | __main__ | INFO | Бот запущен...
+2025-11-14 14:40:42,440 | src.bot | INFO | Вопрос: Сколько выручки в марте?
+2025-11-14 14:41:31,525 | httpx | INFO | HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-14 14:41:31,526 | src.llm | INFO | LLM ответил за 49.00с
+2025-11-14 14:44:13,258 | root | INFO | Логирование инициализировано
+2025-11-14 14:44:13,402 | root | INFO | Логирование инициализировано
+2025-11-14 14:44:13,403 | root | INFO | Логирование инициализировано
+2025-11-14 14:44:13,981 | src.rag | INFO | Загружена существующая БД
+2025-11-14 14:44:13,982 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 14:44:13,982 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 14:44:14,093 | src.bot | INFO | RAG уже содержит 13954 документов. Пропускаем загрузку.
+2025-11-14 14:44:14,096 | root | INFO | Логирование инициализировано
+2025-11-14 14:44:14,107 | __main__ | INFO | ChromaDB загружена: 13954 документов
+2025-11-14 14:44:14,108 | __main__ | INFO | Бот запущен...
+2025-11-14 14:44:26,184 | src.bot | INFO | Вопрос: Сколько выручки в марте?
+2025-11-14 14:44:45,790 | httpx | INFO | HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-14 14:44:45,792 | src.llm | INFO | LLM ОТВЕТ: Данные для анализа выручки в марте не предоставлены.
+2025-11-14 14:44:45,792 | src.llm | INFO | LLM ответил за 18.74с
+2025-11-14 14:44:45,874 | src.bot | INFO | ОТПРАВЛЕНО пользователю: Данные для анализа выручки в марте не предоставлены.
+2025-11-14 14:51:08,192 | src.bot | INFO | Вопрос: Узнать зарплатный счет
+2025-11-14 14:52:13,939 | httpx | INFO | HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-14 14:52:13,941 | src.llm | INFO | LLM ОТВЕТ: Уточните в банке или в личном кабинете.
+2025-11-14 14:52:13,941 | src.llm | INFO | LLM ответил за 64.52с
+2025-11-14 14:52:14,017 | src.bot | INFO | ОТПРАВЛЕНО пользователю: Уточните в банке или в личном кабинете.
+2025-11-14 14:55:45,672 | root | INFO | Логирование инициализировано
+2025-11-14 14:55:45,813 | root | INFO | Логирование инициализировано
+2025-11-14 14:55:45,814 | root | INFO | Логирование инициализировано
+2025-11-14 14:55:46,411 | src.rag | INFO | Создана новая БД
+2025-11-14 14:55:46,411 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 14:55:46,411 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 14:55:46,415 | src.bot | INFO | RAG пуст. Загружаем обязательные CSV...
+2025-11-14 14:55:46,415 | src.bot | CRITICAL | ОТСУТСТВУЮТ: sample_sales.csv
+2025-11-14 15:05:40,346 | root | INFO | Логирование инициализировано
+2025-11-14 15:05:40,489 | root | INFO | Логирование инициализировано
+2025-11-14 15:05:40,490 | root | INFO | Логирование инициализировано
+2025-11-14 15:05:41,077 | src.rag | INFO | Загружена существующая БД
+2025-11-14 15:05:41,077 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 15:05:41,077 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 15:05:41,080 | src.bot | INFO | RAG пуст. Загружаю ВСЕ CSV из data/ (2 файлов)...
+2025-11-14 15:05:41,080 | src.bot | INFO | Загружаю: questions_clean.csv...
+2025-11-14 15:05:41,141 | src.rag | INFO | Загружаю 6977 документов из /home/medj/projects/hackatons/alpha_hackaton/src/../data/questions_clean.csv батчами по 4000
+2025-11-14 15:06:14,616 | root | INFO | Логирование инициализировано
+2025-11-14 15:06:14,766 | root | INFO | Логирование инициализировано
+2025-11-14 15:06:14,767 | root | INFO | Логирование инициализировано
+2025-11-14 15:06:15,395 | src.rag | INFO | Создана новая БД
+2025-11-14 15:06:15,395 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 15:06:15,396 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 15:06:15,401 | src.bot | INFO | RAG пуст. Загружаю ВСЕ CSV из data/ (2 файлов)...
+2025-11-14 15:06:15,401 | src.bot | INFO | Загружаю: questions_clean.csv...
+2025-11-14 15:06:15,493 | src.rag | INFO | Загружаю 6977 документов из /home/medj/projects/hackatons/alpha_hackaton/src/../data/questions_clean.csv батчами по 4000
+2025-11-14 15:11:20,432 | src.rag | INFO | Успешно загружено 6977 документов из /home/medj/projects/hackatons/alpha_hackaton/src/../data/questions_clean.csv
+2025-11-14 15:11:20,435 | src.bot | INFO | УСПЕШНО: questions_clean.csv
+2025-11-14 15:11:20,435 | src.bot | INFO | Загружаю: websites.csv...
+2025-11-14 15:11:20,669 | src.bot | CRITICAL | ОШИБКА при загрузке websites.csv: Error loading /home/medj/projects/hackatons/alpha_hackaton/src/../data/websites.csv
+2025-11-14 15:11:40,111 | root | INFO | Логирование инициализировано
+2025-11-14 15:11:40,258 | root | INFO | Логирование инициализировано
+2025-11-14 15:11:40,258 | root | INFO | Логирование инициализировано
+2025-11-14 15:11:40,841 | src.rag | INFO | Загружена существующая БД
+2025-11-14 15:11:40,841 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-14 15:11:40,841 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-14 15:11:40,902 | src.bot | INFO | RAG уже содержит 6977 документов. Пропускаем загрузку.
+2025-11-14 15:11:40,905 | root | INFO | Логирование инициализировано
+2025-11-14 15:11:40,914 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-14 15:11:40,914 | __main__ | INFO | Бот запущен...
+2025-11-14 15:12:00,407 | src.bot | INFO | Вопрос: Узнать зарплатный счет
+2025-11-14 15:13:11,521 | httpx | INFO | HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-14 15:13:11,523 | src.llm | INFO | LLM ОТВЕТ: Уточните реквизиты зарплатного счета в банке.
+2025-11-14 15:13:11,523 | src.llm | INFO | LLM ответил за 71.05с
+2025-11-14 15:13:11,757 | src.bot | INFO | ОТПРАВЛЕНО пользователю: Уточните реквизиты зарплатного счета в банке.

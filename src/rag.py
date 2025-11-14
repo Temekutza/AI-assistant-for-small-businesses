@@ -1,109 +1,58 @@
-import logging
-import time
-from src.vector_db import VectorDB
-from src.llm import LLMService
+# src/rag.py
+from langchain_community.document_loaders import CSVLoader
+from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.vectorstores import Chroma
+from dotenv import load_dotenv
+import os
+from .logging_config import setup_logging
 
-logger = logging.getLogger(__name__)
+load_dotenv("config.env")
+setup_logging()
+
+logger = __import__("logging").getLogger(__name__)
+
+CHROMA_DB_PATH = os.getenv("CHROMA_DB_PATH", "./chroma_db")
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "nomic-embed-text")
 
 class RAGSystem:
     def __init__(self):
-        self.vector_db = VectorDB()
-        self.llm = LLMService()
-    
-    async def process_query(self, query):
-        """Обработка запроса с детальным логированием"""
-        logger.info(f"\n{'='*50}")
-        logger.info(f"НОВЫЙ ЗАПРОС: {query}")
-        logger.info(f"{'='*50}")
+        self.embeddings = OllamaEmbeddings(model=EMBEDDING_MODEL)
+        self.db_path = os.path.join(os.path.dirname(__file__), "..", CHROMA_DB_PATH.lstrip("./"))
+        os.makedirs(self.db_path, exist_ok=True)
+        self.db = None
+        self.load_or_create_db()
+        logger.info(f"RAG инициализирован: {self.db_path}")
+
+    def load_or_create_db(self):
+        if os.path.exists(self.db_path) and os.listdir(self.db_path):
+            self.db = Chroma(persist_directory=self.db_path, embedding_function=self.embeddings)
+            logger.info("Загружена существующая БД")
+        else:
+            self.db = Chroma(embedding_function=self.embeddings, persist_directory=self.db_path)
+            logger.info("Создана новая БД")
+
+    def add_csv(self, csv_path: str, batch_size: int = 5000):
+        loader = CSVLoader(csv_path)
+        docs = loader.load()
         
-        # 1. Поиск релевантных документов
-        start_time = time.time()
-        raw_relevant_docs = await self.vector_db.search_with_metadata(query, n_results=3)
-        search_time = time.time() - start_time
-        
-        # 2. Фильтрация документов по релевантности (только положительная релевантность)
-        relevant_docs = sorted(raw_relevant_docs, key=lambda x: x['distance'])
-        
-        logger.info(f"[RAG] Поиск завершен за {search_time:.2f} секунд")
-        logger.info(f"[RAG] Найдено документов до фильтрации: {len(raw_relevant_docs)}")
-        logger.info(f"[RAG] Найдено релевантных документов после фильтрации: {len(relevant_docs)}")
+        logger.info(f"Загружаю {len(docs)} документов из {csv_path} батчами по {batch_size}")
+
+        for i in range(0, len(docs), batch_size):
             
-        # Детальное логирование найденных документов
-        for i, doc in enumerate(relevant_docs):
-            logger.info(f"[RAG] Документ #{i+1}:")
-            logger.info(f"[RAG] - Источник: {doc['metadata'].get('source', 'неизвестно')}")
-            logger.info(f"[RAG] - Файл: {doc['metadata'].get('filename', 'неизвестно')}")
-            logger.info(f"[RAG] - Содержимое: \"{doc['document'][:100]}...\"")
+            batch = docs[i:i + batch_size]
+            try:
+                self.db.add_documents(batch)
+                logger.debug(f"Добавлен батч {i//batch_size + 1}: {len(batch)} документов")
+            except Exception as e:
+                logger.error(f"Ошибка при добавлении батча: {e}")
         
-        # 2. Формирование промпта с контекстом
-        context_docs = [doc['document'] for doc in relevant_docs]
-        context = "\n".join([f"Источник [{i+1}]: {doc}" for i, doc in enumerate(context_docs)])
         
-        prompt = self._build_prompt(query, context)
-        logger.info(f"[RAG] Сформирован промпт:\n{prompt}")
-        
-        # 3. Генерация ответа
-        start_time = time.time()
-        response = await self.llm.generate(prompt)
-        gen_time = time.time() - start_time
-        
-        logger.info(f"[RAG] Ответ сгенерирован за {gen_time:.2f} секунд")
-        logger.info(f"[RAG] Сырой ответ от LLM: \"{response[:100]}...\"")
-        
-        # 4. Формирование финального ответа с указанием источников
-        final_response = self._format_response_with_sources(response, relevant_docs)
-        
-        logger.info(f"[RAG] Финальный ответ с источниками:\n{final_response}")
-        logger.info(f"{'='*50}\n")
-        
-        return final_response
-    
-    def _build_prompt(self, query, context):
-        """Формирование промпта для LLM"""
-        return f"""
-    Вы - полезный виртуальный помощник для владельцев малого бизнеса в России.
-    У вас есть доступ к следующему контексту из базы знаний:
-    {context}
-    
-    ПРАВИЛА ОТВЕТА:
-    1. Если контекст содержит релевантную информацию по вопросу - ИСПОЛЬЗУЙТЕ ЕЕ и укажите источник
-    2. Если контекст не содержит точного ответа, но вопрос общий (бизнес, финансы, юриспруденция) - ИСПОЛЬЗУЙТЕ СВОИ ЗНАНИЯ
-    3. Если вопрос содержит опечатку или неточность - ВЕЖЛИВО УТОЧНИТЕ или попробуйте понять суть
-    4. Отвечайте КРАТКО, ПОЛЕЗНО и ПРАКТИЧНО
-    5. Если вопрос выходит за рамки бизнеса или этики - ВЕЖЛИВО ОТКАЖИТЕСЬ
-    
-    ВОПРОС ПОЛЬЗОВАТЕЛЯ:
-    {query}
-    
-    ТВЕТ:
-    """
-    
-    def _format_response_with_sources(self, response, relevant_docs):
-        """Добавление информации об источниках к ответу"""
-        clean_response = response.strip()
-        
-        # Формируем список источников с полной информацией
-        sources_section = "\n\n📚 Использованные источники информации:\n"
-        source_markers = []
-        
-        for i, doc in enumerate(relevant_docs):
-            source = doc['metadata'].get('source', 'другой источник')
-            filename = doc['metadata'].get('filename', '')
-            relevance = f"(релевантность: {1-doc['distance']:.2f})" if doc.get('distance') is not None else ""
-            
-            # Добавляем маркер источника для использования в тексте [1], [2] и т.д.
-            source_markers.append(f"[{i+1}]")
-            
-            # Формируем информацию об источнике
-            source_info = f"{i+1}. {source.title()} | {filename} {relevance}"
-            content_sample = f"   Содержимое: \"{doc['document'][:150]}...\""
-            sources_section += f"{source_info}\n{content_sample}\n\n"
-        
-        # Добавляем предупреждение о точности ответа
-        disclaimer = "\nℹ️ Примечание: Ответ сгенерирован ИИ на основе указанных источников. " \
-                    "Рекомендуется проверить важную информацию перед использованием."
-        
-        # Собираем финальный ответ
-        final_response = f"{clean_response}{sources_section}{disclaimer}"
-        
-        return final_response
+        logger.info(f"Успешно загружено {len(docs)} документов из {csv_path}")
+
+    def search(self, query: str, k: int = 5):
+        if not self.db:
+            logger.warning("Поиск: БД пуста")
+            return "БД пуста. Загрузите CSV."
+        results = self.db.similarity_search(query, k=k)
+        logger.debug(f"Найдено {len(results)} релевантных фрагментов")
+        return "\n".join([doc.page_content for doc in results])
