@@ -2,11 +2,11 @@ import time
 from ollama import AsyncClient
 
 class LLMService:
-    def __init__(self, model="mistral"):
+    def __init__(self, model="qwen3:30b"):
         self.model = model
     
     async def generate(self, prompt):
-        """Генерация ответа с использованием Mistral-7B"""
+        """Генерация ответа с использованием qwen3:30b"""
         start = time.time()
         try:
             client = AsyncClient()

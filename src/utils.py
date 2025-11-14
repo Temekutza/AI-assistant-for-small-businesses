@@ -26,9 +26,9 @@ async def load_initial_data(vector_db=None):
     total_files = 0
     total_docs = 0
     
-    # Обработка всех .txt файлов в папке data
+    # Обработка всех .csv файлов в папке data
     for filename in os.listdir(data_dir):
-        if filename.endswith(".txt"):
+        if filename.endswith(".csv"):
             total_files += 1
             category = os.path.splitext(filename)[0]
             file_path = os.path.join(data_dir, filename)
