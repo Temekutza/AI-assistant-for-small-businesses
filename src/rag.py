@@ -1,12 +1,10 @@
-# src/rag.py
-# RAG — это "база знаний". Загружает CSV и ищет в них нужные строки.
-
 from langchain_community.document_loaders import CSVLoader
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import Chroma
 from dotenv import load_dotenv
 import os
-from .logging_config import setup_logging
+from src.logging_config import setup_logging
+from src.cache import cached_search
 
 load_dotenv("config.env")
 setup_logging()
@@ -38,6 +36,16 @@ class RAGSystem:
             self.db = Chroma(embedding_function=self.embeddings, persist_directory=self.db_path)
             logger.info("Создана новая БД")
 
+    @cached_search  # Добавляем кэширование к методу поиска
+    async def search(self, query, k=5):
+        if not self.db:
+            logger.warning("Поиск: БД пуста")
+            return "БД пуста. Загрузите CSV."
+
+        results = self.db.similarity_search(query, k=k)
+        logger.debug(f"Найдено {len(results)} релевантных фрагментов")
+        return "\n".join([doc.page_content for doc in results])
+
     def add_csv(self, csv_path: str, batch_size: int = 5000):
         # Загружаем CSV-файл
         loader = CSVLoader(csv_path)
@@ -55,13 +63,3 @@ class RAGSystem:
                 logger.error(f"Ошибка при добавлении батча: {e}")
         
         logger.info(f"Успешно загружено {len(docs)} документов из {csv_path}")
-
-    def search(self, query: str, k: int = 5):
-        # Ищем в базе k самых похожих строк
-        if not self.db:
-            logger.warning("Поиск: БД пуста")
-            return "БД пуста. Загрузите CSV."
-        results = self.db.similarity_search(query, k=k)
-        logger.debug(f"Найдено {len(results)} релевантных фрагментов")
-        # Возвращаем текст всех найденных строк
-        return "\n".join([doc.page_content for doc in results])

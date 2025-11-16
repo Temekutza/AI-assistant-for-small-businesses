@@ -1,6 +1,3 @@
-# src/logging_config.py
-# Настройка логов: куда писать, что писать, как форматировать.
-
 import logging
 import os
 from pathlib import Path

@@ -1,11 +1,8 @@
-# src/main.py
-# Точка входа. Запускает бота и проверяет, всё ли готово.
-
 import asyncio
 import os
 from dotenv import load_dotenv
-from .bot import dp, bot, rag  # Импортируем бота и RAG
-from .logging_config import setup_logging
+from src.bot import dp, bot, rag  # Импортируем бота и RAG
+from src.logging_config import setup_logging
 
 # === ЗАГРУЗКА НАСТРОЕК ===
 load_dotenv("config.env")  # Читаем config.env

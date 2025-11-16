@@ -1,11 +1,8 @@
-# src/llm.py
-# ИИ (LLM) — генерирует ответы на основе контекста и вопроса.
-
 import time
 from ollama import AsyncClient  # Асинхронный клиент для Ollama
 from dotenv import load_dotenv
 import os
-from .logging_config import setup_logging
+from src.logging_config import setup_logging # Замечание - либа/файл всегда должна быть полностью указана ( без точки в начале,а {папка_файла}.{либа/файл})
 
 load_dotenv("config.env")
 setup_logging()
