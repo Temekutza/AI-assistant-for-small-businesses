@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Чат с ИИ-помощником Альфа-Банка. Получите ответы на вопросы о бизнесе, юридические консультации и рекомендации.">
+    <title>Альфа-Помощник | Чат с помощником</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Альфа-Помощник</a>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="features.html">Возможности</a>
+                <a href="examples.html">Примеры</a>
+                <a href="assistant.html" class="active">Помощник</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero-simple">
+        <div class="container">
+            <span class="hero-pill">чат с ai</span>
+            <h1>Задайте вопрос помощнику</h1>
+            <p class="hero-subtitle">Опишите задачу в свободной форме — помощник соберёт документы, план действий и метрики для малого бизнеса.</p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="#live-chat" class="btn btn-primary">Перейти к чату</a>
+                <a href="features.html" class="btn btn-link">Посмотреть возможности</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-gray" id="live-chat">
+        <div class="container">
+            <h2>Начните диалог прямо сейчас</h2>
+            <div class="chat-intro">
+                <p>Включите режим «AI-партнёр»: выбирайте быстрые действия или описывайте ситуацию словами. Чем больше контекста — тем точнее готовое решение.</p>
+                <div class="chat-tags">
+                    <span>Юридические боты</span>
+                    <span>Маркетинг 24/7</span>
+                    <span>Финансовый контроль</span>
+                    <span>Онбординг персонала</span>
+                </div>
+            </div>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="chat-window">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message assistant-message">
+                            <div class="message-content">
+                                Здравствуйте! Я ваш бизнес-помощник от Альфа-Банка. Чем могу помочь сегодня?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="chat-input-form" onsubmit="return false;">
+                    <input type="text" id="userInput" class="chat-input" placeholder="Опишите вашу задачу..." />
+                    <button type="submit" class="btn btn-send" onclick="sendMessage()">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Альфа-Банк. Все права защищены.</p>
+            <p class="footer-note">Прототип приложения-помощника для малого бизнеса</p>
+        </div>
+    </footer>
+
+    <!-- ========================================= -->
+    <!--              КОНФИГУРАЦИЯ API              -->
+    <!-- ========================================= -->
+    <script>
+        // === НАСТРОЙКИ ===
+        // Измените только если API запущен не на localhost:8000
+        const API_BASE = 'http://localhost:8000';
+
+        // === ФУНКЦИИ ЧАТА ===
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chatMessages = document.getElementById('chatMessages');
+
+            // Добавляем сообщение пользователя
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user-message';
+            userMsg.innerHTML = `<div class="message-content">${escapeHtml(message)}</div>`;
+            chatMessages.appendChild(userMsg);
+
+            // Добавляем индикатор "печатает..."
+            const typingMsg = document.createElement('div');
+            typingMsg.className = 'message assistant-message typing';
+            typingMsg.innerHTML = `<div class="message-content">печатает<span class="dots">...</span></div>`;
+            chatMessages.appendChild(typingMsg);
+
+            input.value = '';
+            scrollToBottom();
+
+            // Отправляем запрос
+            fetch(`${API_BASE}/chat/`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: message })
+            })
+            .then(res => {
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                return res.json();
+            })
+            .then(data => {
+                typingMsg.remove();
+                const assistantMsg = document.createElement('div');
+                assistantMsg.className = 'message assistant-message';
+                assistantMsg.innerHTML = `<div class="message-content">${escapeHtml(data.response)}</div>`;
+                chatMessages.appendChild(assistantMsg);
+                scrollToBottom();
+            })
+            .catch(err => {
+                typingMsg.remove();
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'message assistant-message error';
+                errorMsg.innerHTML = `<div class="message-content">Ошибка: ${escapeHtml(err.message)}. Попробуйте позже.</div>`;
+                chatMessages.appendChild(errorMsg);
+                console.error('Chat error:', err);
+                scrollToBottom();
+            });
+        }
+
+        // === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function scrollToBottom() {
+            const chat = document.getElementById('chatMessages');
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        // === ОБРАБОТКА ВВОДА ===
+        document.getElementById('userInput').addEventListener('keypress', e => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+
+    <!-- Стили для "печатает..." -->
+    <style>
+        .typing .dots {
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+        .error { color: #ef3124; }
+    </style>
+</body>
+</html>
