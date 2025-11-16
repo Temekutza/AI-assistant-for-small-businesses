@@ -291,3 +291,266 @@ RuntimeError: Directory '/src/frontend' does not exist
 2025-11-16 21:44:57,583 | src.rag | INFO | Загружена существующая БД
 2025-11-16 21:44:57,583 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
 2025-11-16 21:44:57,583 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:53:16,287 | root | INFO | Логирование инициализировано
+2025-11-16 21:53:16,401 | root | INFO | Логирование инициализировано
+2025-11-16 21:53:16,401 | root | INFO | Логирование инициализировано
+2025-11-16 21:53:16,868 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:53:16,869 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:53:16,869 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:53:16,941 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 21:53:16,944 | root | INFO | Логирование инициализировано
+2025-11-16 21:53:16,953 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 21:53:16,953 | __main__ | INFO | Запуск бота и API...
+2025-11-16 21:53:17,305 | root | INFO | Логирование инициализировано
+2025-11-16 21:53:17,313 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:53:17,313 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:53:17,313 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:55:16,631 | root | INFO | Логирование инициализировано
+2025-11-16 21:55:16,746 | root | INFO | Логирование инициализировано
+2025-11-16 21:55:16,747 | root | INFO | Логирование инициализировано
+2025-11-16 21:55:17,212 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:55:17,212 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:55:17,212 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:55:17,277 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 21:55:17,280 | root | INFO | Логирование инициализировано
+2025-11-16 21:55:17,288 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 21:55:17,289 | __main__ | INFO | Запуск бота и API...
+2025-11-16 21:55:17,626 | root | INFO | Логирование инициализировано
+2025-11-16 21:55:17,632 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:55:17,632 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:55:17,632 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:56:49,124 | root | INFO | Логирование инициализировано
+2025-11-16 21:56:49,241 | root | INFO | Логирование инициализировано
+2025-11-16 21:56:49,242 | root | INFO | Логирование инициализировано
+2025-11-16 21:56:49,705 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:56:49,706 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:56:49,706 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:56:49,775 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 21:56:49,778 | root | INFO | Логирование инициализировано
+2025-11-16 21:56:49,786 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 21:56:49,786 | __main__ | INFO | Запуск бота и API...
+2025-11-16 21:56:50,134 | root | INFO | Логирование инициализировано
+2025-11-16 21:56:50,140 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:56:50,140 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:56:50,140 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:58:12,260 | root | INFO | Логирование инициализировано
+2025-11-16 21:58:12,375 | root | INFO | Логирование инициализировано
+2025-11-16 21:58:12,376 | root | INFO | Логирование инициализировано
+2025-11-16 21:58:12,837 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:58:12,837 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:58:12,837 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:58:12,902 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 21:58:12,904 | root | INFO | Логирование инициализировано
+2025-11-16 21:58:12,908 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 21:58:12,909 | __main__ | INFO | Запуск бота и API...
+2025-11-16 21:58:13,234 | root | INFO | Логирование инициализировано
+2025-11-16 21:58:13,239 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:58:13,239 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:58:13,239 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:59:21,274 | root | INFO | Логирование инициализировано
+2025-11-16 21:59:21,387 | root | INFO | Логирование инициализировано
+2025-11-16 21:59:21,388 | root | INFO | Логирование инициализировано
+2025-11-16 21:59:21,855 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:59:21,856 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:59:21,856 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 21:59:21,926 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 21:59:21,930 | root | INFO | Логирование инициализировано
+2025-11-16 21:59:21,938 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 21:59:21,938 | __main__ | INFO | Запуск бота и API...
+2025-11-16 21:59:22,277 | root | INFO | Логирование инициализировано
+2025-11-16 21:59:22,282 | src.rag | INFO | Загружена существующая БД
+2025-11-16 21:59:22,282 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 21:59:22,282 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:03:35,866 | root | INFO | Логирование инициализировано
+2025-11-16 22:03:35,980 | root | INFO | Логирование инициализировано
+2025-11-16 22:03:35,981 | root | INFO | Логирование инициализировано
+2025-11-16 22:03:36,452 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:03:36,452 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:03:36,452 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:03:36,495 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:03:36,498 | root | INFO | Логирование инициализировано
+2025-11-16 22:03:36,507 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:03:36,507 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:03:36,833 | root | INFO | Логирование инициализировано
+2025-11-16 22:03:36,838 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:03:36,838 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:03:36,838 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:04:35,728 | root | INFO | Логирование инициализировано
+2025-11-16 22:04:35,842 | root | INFO | Логирование инициализировано
+2025-11-16 22:04:35,843 | root | INFO | Логирование инициализировано
+2025-11-16 22:04:36,314 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:04:36,314 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:04:36,314 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:04:36,372 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:04:36,375 | root | INFO | Логирование инициализировано
+2025-11-16 22:04:36,383 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:04:36,383 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:04:36,725 | root | INFO | Логирование инициализировано
+2025-11-16 22:04:36,730 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:04:36,730 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:04:36,730 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:04:47,898 | src.api | INFO | API запрос: как зарегистрировать ИП
+2025-11-16 22:04:47,899 | src.cache | INFO | [MISS] как зарегистрировать ИП → RAG
+2025-11-16 22:04:48,363 | src.cache | INFO | [SAVED] как зарегистрировать ИП → L1 + L2
+2025-11-16 22:06:06,899 | httpx | INFO | HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-16 22:06:06,901 | src.llm | INFO | LLM ОТВЕТ: Регистрация ИП проводится через налоговую службу (ФНС), не через банк. Подайте заявление в налоговую инспекцию или на портале Госуслуг. Банк не участвует в этом процессе. Рекомендуем обратиться на сайт ФНС или в местное отделение налоговой.
+2025-11-16 22:06:06,901 | src.llm | INFO | LLM ответил за 78.54с
+2025-11-16 22:07:38,836 | root | INFO | Логирование инициализировано
+2025-11-16 22:07:38,955 | root | INFO | Логирование инициализировано
+2025-11-16 22:07:38,956 | root | INFO | Логирование инициализировано
+2025-11-16 22:07:39,426 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:07:39,426 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:07:39,426 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:07:39,480 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:07:39,484 | root | INFO | Логирование инициализировано
+2025-11-16 22:07:39,492 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:07:39,492 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:07:39,817 | root | INFO | Логирование инициализировано
+2025-11-16 22:07:39,821 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:07:39,822 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:07:39,822 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:13:11,992 | root | INFO | Логирование инициализировано
+2025-11-16 22:13:12,107 | root | INFO | Логирование инициализировано
+2025-11-16 22:13:12,108 | root | INFO | Логирование инициализировано
+2025-11-16 22:13:12,604 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:13:12,604 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:13:12,605 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:13:12,675 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:13:12,678 | root | INFO | Логирование инициализировано
+2025-11-16 22:13:12,686 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:13:12,686 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:13:13,018 | root | INFO | Логирование инициализировано
+2025-11-16 22:13:13,023 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:13:13,023 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:13:13,023 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:14:00,851 | root | INFO | Логирование инициализировано
+2025-11-16 22:14:00,968 | root | INFO | Логирование инициализировано
+2025-11-16 22:14:00,969 | root | INFO | Логирование инициализировано
+2025-11-16 22:14:01,434 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:14:01,435 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:14:01,435 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:14:01,501 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:14:01,505 | root | INFO | Логирование инициализировано
+2025-11-16 22:14:01,512 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:14:01,512 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:14:01,812 | root | INFO | Логирование инициализировано
+2025-11-16 22:14:01,817 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:14:01,817 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:14:01,817 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:17:54,129 | root | INFO | Логирование инициализировано
+2025-11-16 22:17:54,243 | root | INFO | Логирование инициализировано
+2025-11-16 22:17:54,244 | root | INFO | Логирование инициализировано
+2025-11-16 22:17:54,708 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:17:54,708 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:17:54,708 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:17:54,777 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:17:54,781 | root | INFO | Логирование инициализировано
+2025-11-16 22:17:54,789 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:17:54,789 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:17:55,123 | root | INFO | Логирование инициализировано
+2025-11-16 22:17:55,128 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:17:55,128 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:17:55,129 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:18:35,889 | root | INFO | Логирование инициализировано
+2025-11-16 22:18:36,002 | root | INFO | Логирование инициализировано
+2025-11-16 22:18:36,003 | root | INFO | Логирование инициализировано
+2025-11-16 22:18:36,499 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:18:36,499 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:18:36,499 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:18:36,577 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:18:36,580 | root | INFO | Логирование инициализировано
+2025-11-16 22:18:36,588 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:18:36,589 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:18:36,931 | root | INFO | Логирование инициализировано
+2025-11-16 22:18:36,932 | __main__ | CRITICAL | Критическая ошибка: Directory '/home/medj/projects/hackatons/alpha_hackaton/src/static' does not exist
+Traceback (most recent call last):
+  File "/home/medj/projects/hackatons/alpha_hackaton/src/main.py", line 42, in main
+    await asyncio.gather(bot_task, api_task)
+  File "/usr/lib/python3.10/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/medj/.local/lib/python3.10/site-packages/uvicorn/main.py", line 593, in run
+    server.run()
+  File "/home/medj/.local/lib/python3.10/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/medj/.local/lib/python3.10/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/medj/.local/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/medj/.local/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/home/medj/.local/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/medj/.local/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/medj/projects/hackatons/alpha_hackaton/src/api.py", line 24, in <module>
+    app.mount("/frontend", StaticFiles(directory=STATIC_DIR), name="frontend")
+  File "/home/medj/.local/lib/python3.10/site-packages/starlette/staticfiles.py", line 56, in __init__
+    raise RuntimeError(f"Directory '{directory}' does not exist")
+RuntimeError: Directory '/home/medj/projects/hackatons/alpha_hackaton/src/static' does not exist
+2025-11-16 22:21:15,771 | root | INFO | Логирование инициализировано
+2025-11-16 22:21:15,891 | root | INFO | Логирование инициализировано
+2025-11-16 22:21:15,892 | root | INFO | Логирование инициализировано
+2025-11-16 22:21:16,360 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:21:16,360 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:21:16,360 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:21:16,431 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:21:16,435 | root | INFO | Логирование инициализировано
+2025-11-16 22:21:16,443 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:21:16,443 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:21:16,781 | root | INFO | Логирование инициализировано
+2025-11-16 22:21:16,786 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:21:16,786 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:21:16,786 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:24:25,754 | root | INFO | Логирование инициализировано
+2025-11-16 22:24:25,867 | root | INFO | Логирование инициализировано
+2025-11-16 22:24:25,868 | root | INFO | Логирование инициализировано
+2025-11-16 22:24:26,363 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:24:26,363 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:24:26,363 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:24:26,436 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:24:26,440 | root | INFO | Логирование инициализировано
+2025-11-16 22:24:26,448 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:24:26,448 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:24:26,794 | root | INFO | Логирование инициализировано
+2025-11-16 22:24:26,799 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:24:26,799 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:24:26,799 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:25:44,852 | root | INFO | Логирование инициализировано
+2025-11-16 22:25:44,971 | root | INFO | Логирование инициализировано
+2025-11-16 22:25:44,972 | root | INFO | Логирование инициализировано
+2025-11-16 22:25:45,440 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:25:45,441 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:25:45,441 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:25:45,509 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:25:45,512 | root | INFO | Логирование инициализировано
+2025-11-16 22:25:45,521 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:25:45,521 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:25:45,864 | root | INFO | Логирование инициализировано
+2025-11-16 22:25:45,869 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:25:45,869 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:25:45,870 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:30:35,872 | root | INFO | Логирование инициализировано
+2025-11-16 22:30:35,987 | root | INFO | Логирование инициализировано
+2025-11-16 22:30:35,988 | root | INFO | Логирование инициализировано
+2025-11-16 22:30:36,488 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:30:36,488 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:30:36,489 | src.llm | INFO | LLM модель: qwen3:30b
+2025-11-16 22:30:36,563 | src.bot | INFO | RAG содержит 6977 документов. Пропускаем загрузку.
+2025-11-16 22:30:36,567 | root | INFO | Логирование инициализировано
+2025-11-16 22:30:36,576 | __main__ | INFO | ChromaDB загружена: 6977 документов
+2025-11-16 22:30:36,576 | __main__ | INFO | Запуск бота и API...
+2025-11-16 22:30:36,936 | root | INFO | Логирование инициализировано
+2025-11-16 22:30:36,941 | src.rag | INFO | Загружена существующая БД
+2025-11-16 22:30:36,941 | src.rag | INFO | RAG инициализирован: /home/medj/projects/hackatons/alpha_hackaton/src/../chroma_db
+2025-11-16 22:30:36,941 | src.llm | INFO | LLM модель: qwen3:30b

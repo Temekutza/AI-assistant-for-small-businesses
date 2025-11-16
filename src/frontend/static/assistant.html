@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Чат с ИИ-помощником Альфа-Банка. Получите ответы на вопросы о бизнесе, юридические консультации и рекомендации.">
     <title>Альфа-Помощник | Чат с помощником</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <a href="index.html" class="logo">Альфа-Помощник</a>
+            <a href="/static/index.html" class="logo">Альфа-Помощник</a>
             <nav class="nav">
-                <a href="index.html">Главная</a>
-                <a href="features.html">Возможности</a>
-                <a href="examples.html">Примеры</a>
-                <a href="assistant.html" class="active">Помощник</a>
+                <a href="/">Главная</a>
+                <a href="/features">Возможности</a>
+                <a href="/examples">Примеры</a>
+                <a href="/assistant">Чат</a>
             </nav>
         </div>
     </header>
@@ -27,7 +27,7 @@
             <p class="hero-subtitle">Опишите задачу в свободной форме — помощник соберёт документы, план действий и метрики для малого бизнеса.</p>
             <div class="hero-actions" style="justify-content: center;">
                 <a href="#live-chat" class="btn btn-primary">Перейти к чату</a>
-                <a href="features.html" class="btn btn-link">Посмотреть возможности</a>
+                <a href="/static/features.html" class="btn btn-link">Посмотреть возможности</a>
             </div>
         </div>
     </section>
@@ -73,11 +73,10 @@
     <!--              КОНФИГУРАЦИЯ API              -->
     <!-- ========================================= -->
     <script>
-        // === НАСТРОЙКИ ===
-        // Измените только если API запущен не на localhost:8000
-        const API_BASE = 'http://localhost:8001';
+        // === КОНФИГУРАЦИЯ ===
+        const API_BASE = 'http://localhost:8000';  // ← УБЕДИСЬ, ЧТО ЭТО ЕСТЬ!
 
-        // === ФУНКЦИИ ЧАТА ===
+        // === ОТПРАВКА СООБЩЕНИЯ ===
         function sendMessage() {
             const input = document.getElementById('userInput');
             const message = input.value.trim();
@@ -85,13 +84,13 @@
 
             const chatMessages = document.getElementById('chatMessages');
 
-            // Добавляем сообщение пользователя
+            // Пользовательское сообщение
             const userMsg = document.createElement('div');
             userMsg.className = 'message user-message';
             userMsg.innerHTML = `<div class="message-content">${escapeHtml(message)}</div>`;
             chatMessages.appendChild(userMsg);
 
-            // Добавляем индикатор "печатает..."
+            // Индикатор "печатает..."
             const typingMsg = document.createElement('div');
             typingMsg.className = 'message assistant-message typing';
             typingMsg.innerHTML = `<div class="message-content">печатает<span class="dots">...</span></div>`;
@@ -100,17 +99,26 @@
             input.value = '';
             scrollToBottom();
 
-            // Отправляем запрос
-            fetch(`${API_BASE}/chat/`, {
+            // === ЛОГИРОВАНИЕ: отправка ===
+            console.log('[CHAT] Отправка:', message);
+            console.log('[CHAT] URL:', `${API_BASE}/chat`);
+
+            // === ОТПРАВКА НА СЕРВЕР ===
+            fetch(`${API_BASE}/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: message })
             })
             .then(res => {
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                console.log('[CHAT] Ответ сервера:', res.status, res.statusText);
+                if (!res.ok) {
+                    throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+                }
                 return res.json();
             })
             .then(data => {
+                console.log('[CHAT] Успешный ответ:', data);
+
                 typingMsg.remove();
                 const assistantMsg = document.createElement('div');
                 assistantMsg.className = 'message assistant-message';
@@ -119,12 +127,13 @@
                 scrollToBottom();
             })
             .catch(err => {
+                console.error('[CHAT] Ошибка:', err.message);
+
                 typingMsg.remove();
                 const errorMsg = document.createElement('div');
                 errorMsg.className = 'message assistant-message error';
                 errorMsg.innerHTML = `<div class="message-content">Ошибка: ${escapeHtml(err.message)}. Попробуйте позже.</div>`;
                 chatMessages.appendChild(errorMsg);
-                console.error('Chat error:', err);
                 scrollToBottom();
             });
         }
@@ -145,6 +154,9 @@
         document.getElementById('userInput').addEventListener('keypress', e => {
             if (e.key === 'Enter') sendMessage();
         });
+
+        // Кнопка "Отправить"
+        document.querySelector('.chat-input-form button').addEventListener('click', sendMessage);
     </script>
 
     <!-- Стили для "печатает..." -->

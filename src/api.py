@@ -16,18 +16,19 @@ logger = __import__("logging").getLogger(__name__)
 
 app = FastAPI(title="Alfa-Pomoshnik API")
 
-# ---------- STATIC ----------
-# Папка со статикой (относительно этого файла)
-STATIC_DIR = os.path.join(os.path.dirname(__file__), "frontend")
-# Монтируем статику на / (корень)
-app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")
+# ---------- static ----------
+# Папка: src/frontend (рядом с api.py)
+STATIC_DIR = os.path.join(os.path.dirname(__file__), "frontend", "static")
+
+# Монтируем статику на /static (чтобы не конфликтовать с API)
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 # Главная страница — index.html
 @app.get("/")
 async def root():
     return FileResponse(os.path.join(STATIC_DIR, "index.html"))
 
-# Переадресация без .html (опционально, удобно)
+# Переадресация без .html
 @app.get("/{page}")
 async def serve_page(page: str):
     mapping = {
@@ -38,7 +39,6 @@ async def serve_page(page: str):
     filename = mapping.get(page)
     if filename:
         return FileResponse(os.path.join(STATIC_DIR, filename))
-    # Если не нашли — отдаём 404 (FastAPI сделает сам)
     raise HTTPException(status_code=404, detail="Page not found")
 
 # ---------- API ----------
@@ -48,7 +48,7 @@ llm = LLMService()
 class ChatRequest(BaseModel):
     message: str
 
-@app.post("/chat/")
+@app.post("/chat")
 async def chat(request: ChatRequest):
     try:
         query = request.message
